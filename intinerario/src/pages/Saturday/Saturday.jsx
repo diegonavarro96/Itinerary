@@ -41,6 +41,18 @@ const Saturday = () => {
         toDo: "Round 3",
       },
   ];
+  const data = fridaySchedule.map((Activity,index) => {
+    return (
+      <Row key= {index} className="border border-3 mt-1">
+        <Col>
+          <p className="fs-2 text-light mt-4 "> {Activity.time}</p>
+        </Col>
+        <Col>
+          <p className="fs-3 text-light mt-4"> {Activity.toDo}</p>
+        </Col>
+      </Row>
+    );
+  });
   return (
     <>
       <Container className="text-center mt-5">
@@ -53,16 +65,7 @@ const Saturday = () => {
           </Col>
         </Row>
 
-        {fridaySchedule.map((Activity) => (
-          <Row className="border border-3 mt-1">
-            <Col>
-              <p className="fs-2 text-light mt-4 "> {Activity.time}</p>
-            </Col>
-            <Col>
-              <p className="fs-3 text-light mt-4"> {Activity.toDo}</p>
-            </Col>
-          </Row>
-        ))}
+       {data}
       </Container>
     </>
   );
